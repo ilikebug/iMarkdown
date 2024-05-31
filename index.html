@@ -12,6 +12,18 @@
 </head>
 <body>
     <div class="container">
+        <div id="sidebar" class="sidebar">
+            <div class="tooltip">
+                <button class="export_data_button" onclick="exportFile()"></button>
+                <span class="tooltiptext">export</span>
+            </div>
+            <div class="tooltip">
+                <a href="https://postimages.org/" target="_blank">
+                    <button class= "upload_image_button"></button>
+                    <span class="tooltiptext">upload</span>
+                </a>
+            </div>
+        </div>
         <div class="editor">
             <textarea id="markdown-input" placeholder="Start typing your Markdown here..." style="border: none;"></textarea>
         </div>

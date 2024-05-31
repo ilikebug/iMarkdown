@@ -31,3 +31,59 @@ body {
     max-width: 100%;
     max-height: 500px;
 }
+
+#sidebar {
+    width: 30px;
+    height: 100vh; /* Full height */
+    background-color:antiquewhite;   
+    padding: 10px;
+}
+
+.export_data_button {
+    background-image: url(export_data.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.upload_image_button {
+    background-image: url(upload_image.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.tooltip {
+    margin-top: 10px;
+    position: relative; /* 相对定位 */
+    display: inline-block; /* 使按钮可以设置宽度和高度 */
+    border-bottom: 1px dotted black; /* 悬停时显示下划线 */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden; /* 隐藏tooltip */
+    width: 120px; /* tooltip宽度 */
+    background-color: #555; /* 背景颜色 */
+    color: #fff; /* 文本颜色 */
+    text-align: center; /* 文本居中 */
+    padding: 5px 0; /* 内边距 */
+    border-radius: 6px; /* 圆角 */
+    position: absolute; /* 绝对定位 */
+    z-index: 1; /* 确保在其他元素之上 */
+    bottom: 100%; /* 在按钮下方 */
+    left: 50%; /* 水平居中 */
+    margin-left: -60px; /* 居中对齐 */
+    opacity: 10; /* 透明度 */
+    transition: opacity 0.3s; /* 过渡效果 */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* 悬停时显示tooltip */
+    opacity: 1; /* 悬停时显示不透明 */
+}

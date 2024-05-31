@@ -63,3 +63,13 @@ function hello() {
 
 });
 
+function exportFile() {
+    const markdownText = document.getElementById('markdown-input').value;
+    const blob = new Blob([markdownText], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'markdown.md';
+    a.click();
+    URL.revokeObjectURL(url);
+}
