@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> iMarkdown Editor </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+</head>
+<body>
+    <div class="container" style="background-image: url(bg.png);">
+        <div class="editor">
+            <textarea id="markdown-input" placeholder="Start typing your Markdown here..."></textarea>
+        </div>
+        <div class="preview">
+            <div id="preview" class="markdown-body"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
