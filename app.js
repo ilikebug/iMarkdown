@@ -1,4 +1,5 @@
 // app.js
+
 document.addEventListener('DOMContentLoaded', function() {
     const markdownInput = document.getElementById('markdown-input');
     const preview = document.getElementById('preview');
@@ -12,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
            out += '/>';
             return out;
     };
+
+
     marked.setOptions({ renderer: renderer });
     // 监听 textarea 内容变化
     markdownInput.addEventListener('input', function() {
@@ -60,7 +63,6 @@ function hello() {
         markdownInput.value = initialMarkdown;
     }
     markdownInput.dispatchEvent(new Event('input'));
-
 });
 
 function exportFile() {
