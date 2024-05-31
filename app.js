@@ -13,14 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return out;
     };
     marked.setOptions({ renderer: renderer });
-
+    // 监听 textarea 内容变化
     markdownInput.addEventListener('input', function() {
         const markdownText = markdownInput.value;
+        sessionStorage.setItem('textareaContent', markdownText);
         const html = marked.parse(markdownText); 
         console.log(html);
         preview.innerHTML = html;
     });
-
+    // 保存输入内容 && 初始化 textarea
+    var savedText = sessionStorage.getItem('textareaContent');
+    if (savedText) {
+      document.getElementById('markdown-input').value = savedText;
+    } else {
     // 初始化预览
     const initialMarkdown = `
 # Welcome to the Markdown Editor!
@@ -52,6 +57,9 @@ function hello() {
 
 **Enjoy editing!**
     `;
-    markdownInput.value = initialMarkdown;
+        markdownInput.value = initialMarkdown;
+    }
     markdownInput.dispatchEvent(new Event('input'));
+
 });
+
