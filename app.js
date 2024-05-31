@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 监听 textarea 内容变化
     markdownInput.addEventListener('input', function() {
         const markdownText = markdownInput.value;
-        sessionStorage.setItem('textareaContent', markdownText);
+        localStorage.setItem('textareaContent', markdownText);
         const html = marked.parse(markdownText); 
         console.log(html);
         preview.innerHTML = html;
     });
     // 保存输入内容 && 初始化 textarea
-    var savedText = sessionStorage.getItem('textareaContent');
+    var savedText = localStorage.getItem('textareaContent');
     if (savedText) {
       document.getElementById('markdown-input').value = savedText;
     } else {
