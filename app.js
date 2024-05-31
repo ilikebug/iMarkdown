@@ -2,6 +2,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const markdownInput = document.getElementById('markdown-input');
     const preview = document.getElementById('preview');
+    // add img limition
+    var renderer = new marked.Renderer();
+    renderer.image = function(href, title, text) {
+        var out = '<img class="image" src="' + href + '" alt="' + text + '"';
+         if (title) {
+              out += ' title="' + title + '"';
+            }
+           out += '/>';
+            return out;
+    };
+    marked.setOptions({ renderer: renderer });
 
     markdownInput.addEventListener('input', function() {
         const markdownText = markdownInput.value;
