@@ -13,6 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
            out += '/>';
             return out;
     };
+    renderer.code = function(code, language) {
+        // 检查语言是否有效
+        const validLang = !!(language && hljs.getLanguage(language));
+    
+        // 使用 highlight.js 高亮代码
+        const highlighted = validLang ? hljs.highlight(language, code).value : hljs.highlightAuto(code).value;
+    
+        return `<pre><code class="hljs ${validLang ? language : ''}" style="background-color: #333; color: #fff;">${highlighted}</code></pre>\n`;
+    };
 
 
     marked.setOptions({ renderer: renderer });
